@@ -16,5 +16,19 @@ namespace QL_Cafe.GUI
         {
             InitializeComponent();
         }
+
+        private void MenuStripListCafe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fCafe fCafeList = new fCafe();
+            fCafeList.Show();
+        }
+
+        private void MenuStripCafeCategoryList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fCafeCategory fCafeCategoryList = new fCafeCategory();  
+            fCafeCategoryList.Show();
+        }
     }
 }

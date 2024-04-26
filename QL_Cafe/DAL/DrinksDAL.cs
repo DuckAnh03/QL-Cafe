@@ -20,10 +20,10 @@ namespace QL_Cafe.DAL
 
         public DataTable GetDrinksByCategoryId(int categoryId)
         {
-            var query = "SELECT * FROM [STUDENT] ";
+            var query = "SELECT * FROM [Drinks] ";
             if (categoryId > 0)
             {
-                query += $"WHERE ClassId ={categoryId}";
+                query += $"WHERE ID_DrinksCategory ={categoryId}";
             }
             return DataProvider.Instance.ExecuteQuery(query);
         }
@@ -39,7 +39,7 @@ namespace QL_Cafe.DAL
 
         public bool AddDrinks(Drinks data)
         {
-            var query = $"INSERT INTO [Drinks] (Name, ID_DrinksCategory, Price" +
+            var query = $"INSERT INTO [Drinks] (Name, ID_DrinksCategory, Price)" +
                         $" VALUES (N'{data.DrinksName}', {data.ID_DrinksCategory}, {data.Price})";
             var result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;

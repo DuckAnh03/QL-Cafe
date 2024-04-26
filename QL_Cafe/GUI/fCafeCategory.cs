@@ -81,5 +81,12 @@ namespace QL_Cafe.GUI
             MessageBox.Show("Không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            fMain f = new fMain();
+            f.Show();
+        }
     }
 }

@@ -39,6 +39,7 @@
             btnAdd = new Button();
             btnDelete = new Button();
             dataGridViewDrinksCategory = new DataGridView();
+            btnClose = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -111,7 +112,7 @@
             // btnUpdate
             // 
             btnUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(375, 163);
+            btnUpdate.Location = new Point(254, 163);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(115, 38);
             btnUpdate.TabIndex = 15;
@@ -122,7 +123,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(133, 163);
+            btnAdd.Location = new Point(12, 163);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(115, 38);
             btnAdd.TabIndex = 14;
@@ -133,7 +134,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(254, 163);
+            btnDelete.Location = new Point(133, 163);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(115, 38);
             btnDelete.TabIndex = 13;
@@ -151,11 +152,23 @@
             dataGridViewDrinksCategory.TabIndex = 12;
             dataGridViewDrinksCategory.SelectionChanged += dataGridViewDrinksCategory_SelectionChanged;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClose.Location = new Point(499, 163);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(115, 38);
+            btnClose.TabIndex = 17;
+            btnClose.Text = "Đóng";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // fCafeCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(625, 480);
+            Controls.Add(btnClose);
             Controls.Add(panel1);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
@@ -186,5 +199,6 @@
         private Button btnAdd;
         private Button btnDelete;
         private DataGridView dataGridViewDrinksCategory;
+        private Button btnClose;
     }
 }

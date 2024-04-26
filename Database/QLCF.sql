@@ -39,10 +39,10 @@ CREATE TABLE Drinks --Đồ uống
 (
 	ID INT IDENTITY PRIMARY KEY,
 	Name NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',
-	ID_DrinksCategry INT NOT NULL,
+	ID_DrinksCategory INT NOT NULL,
 	Price FLOAT NOT NULL
 
-	FOREIGN KEY (ID_DrinksCategry) REFERENCES DrinksCategory(ID)
+	FOREIGN KEY (ID_DrinksCategory) REFERENCES DrinksCategory(ID)
 )
 GO
 
@@ -77,4 +77,5 @@ GO
 INSERT INTO Drinks VALUES (N'Đen đá', 1, 10000)
 INSERT INTO Drinks VALUES (N'Cafe Latte', 2, 20000)
 GO
+
 

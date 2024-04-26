@@ -34,6 +34,8 @@
             btnUpdate = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            btnCancel = new Button();
+            btnConfirm = new Button();
             panel5 = new Panel();
             label3 = new Label();
             txtPrice = new TextBox();
@@ -45,6 +47,7 @@
             panel4 = new Panel();
             cbb_CafeCategory = new ComboBox();
             Loại = new Label();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -61,11 +64,12 @@
             dataGridViewDrinks.RowHeadersWidth = 51;
             dataGridViewDrinks.Size = new Size(602, 271);
             dataGridViewDrinks.TabIndex = 1;
+            dataGridViewDrinks.SelectionChanged += dataGridViewDrinks_SelectionChanged;
             // 
             // btnDelete
             // 
             btnDelete.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(260, 165);
+            btnDelete.Location = new Point(139, 165);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(115, 38);
             btnDelete.TabIndex = 2;
@@ -76,17 +80,18 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(139, 165);
+            btnAdd.Location = new Point(18, 165);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(115, 38);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Thêm";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
             btnUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(381, 165);
+            btnUpdate.Location = new Point(260, 165);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(115, 38);
             btnUpdate.TabIndex = 4;
@@ -105,6 +110,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnConfirm);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -113,11 +120,33 @@
             panel1.Size = new Size(602, 101);
             panel1.TabIndex = 7;
             // 
+            // btnCancel
+            // 
+            btnCancel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.Location = new Point(356, 51);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(115, 38);
+            btnCancel.TabIndex = 14;
+            btnCancel.Text = "Hủy";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnConfirm
+            // 
+            btnConfirm.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConfirm.Location = new Point(477, 51);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(115, 38);
+            btnConfirm.TabIndex = 13;
+            btnConfirm.Text = "Xác nhận";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
+            // 
             // panel5
             // 
             panel5.Controls.Add(label3);
             panel5.Controls.Add(txtPrice);
-            panel5.Location = new Point(337, 49);
+            panel5.Location = new Point(337, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(262, 40);
             panel5.TabIndex = 12;
@@ -201,6 +230,7 @@
             cbb_CafeCategory.Name = "cbb_CafeCategory";
             cbb_CafeCategory.Size = new Size(234, 30);
             cbb_CafeCategory.TabIndex = 8;
+            cbb_CafeCategory.SelectedIndexChanged += cbb_CafeCategory_SelectedIndexChanged;
             // 
             // Loại
             // 
@@ -212,11 +242,23 @@
             Loại.TabIndex = 5;
             Loại.Text = "Loại cafe";
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClose.Location = new Point(505, 165);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(115, 38);
+            btnClose.TabIndex = 12;
+            btnClose.Text = "Đóng";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // fCafe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(634, 492);
+            Controls.Add(btnClose);
             Controls.Add(panel1);
             Controls.Add(panel4);
             Controls.Add(btnUpdate);
@@ -259,5 +301,8 @@
         private Panel panel5;
         private Label label3;
         private TextBox txtPrice;
+        private Button btnConfirm;
+        private Button btnCancel;
+        private Button btnClose;
     }
 }

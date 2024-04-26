@@ -37,6 +37,7 @@
             thốngKêToolStripMenuItem = new ToolStripMenuItem();
             tàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
             MSLogout = new ToolStripMenuItem();
+            thôngTinToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             // 
             // tàiKhoảnToolStripMenuItem
             // 
-            tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MSLogout });
+            tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinToolStripMenuItem, MSLogout });
             tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             tàiKhoảnToolStripMenuItem.Size = new Size(85, 24);
             tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
@@ -99,9 +100,15 @@
             // MSLogout
             // 
             MSLogout.Name = "MSLogout";
-            MSLogout.Size = new Size(224, 26);
+            MSLogout.Size = new Size(160, 26);
             MSLogout.Text = "Đăng xuất";
             MSLogout.Click += MSLogout_Click;
+            // 
+            // thôngTinToolStripMenuItem
+            // 
+            thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
+            thôngTinToolStripMenuItem.Size = new Size(160, 26);
+            thôngTinToolStripMenuItem.Text = "Thông tin ";
             // 
             // fMain
             // 
@@ -130,5 +137,6 @@
         private ToolStripMenuItem thốngKêToolStripMenuItem;
         private ToolStripMenuItem tàiKhoảnToolStripMenuItem;
         private ToolStripMenuItem MSLogout;
+        private ToolStripMenuItem thôngTinToolStripMenuItem;
     }
 }

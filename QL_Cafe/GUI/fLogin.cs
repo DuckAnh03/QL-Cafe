@@ -15,5 +15,10 @@ namespace QL_Cafe
             fMain fmain = new fMain();
             fmain.Show();
         }
+
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

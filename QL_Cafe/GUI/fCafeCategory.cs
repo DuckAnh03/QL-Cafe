@@ -44,24 +44,15 @@ namespace QL_Cafe.GUI
             {
                 selectionId = category.Count - 1;
             }
-            txtIDCa.Text = category[selectionId].ID?.ToString();
-            txtNameCa.Text = category[selectionId].CategoryName;
+            txtID.Text = category[selectionId].ID?.ToString();
+            txtName.Text = category[selectionId].CategoryName;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            var loaicafe = new Category(null, txtNameCa.Text);
-            if (_categoryBUS.Add(loaicafe))
-            {
-                loadData();
-                return;
-            }
-            MessageBox.Show($"Không thể thêm {txtNameCa.Text}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (_categoryBUS.Update(new(int.Parse(txtIDCa.Text), txtNameCa.Text)))
+            if (_categoryBUS.Update(new(int.Parse(txtID.Text), txtName.Text)))
             {
                 loadData();
                 return;
@@ -72,7 +63,7 @@ namespace QL_Cafe.GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtIDCa.Text, out int value) && _categoryBUS.Delete(value))
+            if (int.TryParse(txtID.Text, out int value) && _categoryBUS.Delete(value))
             {
                 loadData();
                 return;
@@ -82,11 +73,64 @@ namespace QL_Cafe.GUI
 
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dataGridViewDrinksCategory.ClearSelection();
+
+            //Xóa dữ liệu textBox để thêm mới
+            txtID.Clear();
+            txtName.Clear();
+
+            txtName.Select();
+
+            //Hiện nút xác nhận, hủy
+            btnConfirm.Show();
+            btnCancel.Show();
+
+            //Không cho click button còn lại khi chưa xác nhận || hủy
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            var loaicafe = new Category(null, txtName.Text);
+            if (_categoryBUS.Add(loaicafe))
+            {
+                loadData();
+                return;
+            }
+            MessageBox.Show($"Không thể thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+
+            btnConfirm.Hide();
+            btnCancel.Hide();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtID.Clear();
+            txtName.Clear();
+
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+
+            btnConfirm.Hide();
+            btnCancel.Hide();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
             fMain f = new fMain();
             f.Show();
         }
+
+        
     }
 }

@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnCancel = new Button();
+            btnConfirm = new Button();
             panel3 = new Panel();
             label2 = new Label();
-            txtNameCa = new TextBox();
+            txtName = new TextBox();
             panel2 = new Panel();
             label1 = new Label();
-            txtIDCa = new TextBox();
+            txtID = new TextBox();
             btnUpdate = new Button();
             btnAdd = new Button();
             btnDelete = new Button();
@@ -48,6 +50,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnConfirm);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(12, 56);
@@ -55,10 +59,32 @@
             panel1.Size = new Size(602, 101);
             panel1.TabIndex = 16;
             // 
+            // btnCancel
+            // 
+            btnCancel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.Location = new Point(363, 50);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(115, 38);
+            btnCancel.TabIndex = 16;
+            btnCancel.Text = "Hủy";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnConfirm
+            // 
+            btnConfirm.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConfirm.Location = new Point(484, 50);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(115, 38);
+            btnConfirm.TabIndex = 15;
+            btnConfirm.Text = "Xác nhận";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
+            // 
             // panel3
             // 
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(txtNameCa);
+            panel3.Controls.Add(txtName);
             panel3.Location = new Point(3, 49);
             panel3.Name = "panel3";
             panel3.Size = new Size(327, 40);
@@ -74,18 +100,18 @@
             label2.TabIndex = 5;
             label2.Text = "Loại cafe";
             // 
-            // txtNameCa
+            // txtName
             // 
-            txtNameCa.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNameCa.Location = new Point(88, 6);
-            txtNameCa.Name = "txtNameCa";
-            txtNameCa.Size = new Size(233, 30);
-            txtNameCa.TabIndex = 8;
+            txtName.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtName.Location = new Point(88, 6);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(233, 30);
+            txtName.TabIndex = 8;
             // 
             // panel2
             // 
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(txtIDCa);
+            panel2.Controls.Add(txtID);
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(327, 40);
@@ -101,13 +127,13 @@
             label1.TabIndex = 5;
             label1.Text = "ID";
             // 
-            // txtIDCa
+            // txtID
             // 
-            txtIDCa.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIDCa.Location = new Point(88, 6);
-            txtIDCa.Name = "txtIDCa";
-            txtIDCa.Size = new Size(233, 30);
-            txtIDCa.TabIndex = 8;
+            txtID.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtID.Location = new Point(88, 6);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(233, 30);
+            txtID.TabIndex = 8;
             // 
             // btnUpdate
             // 
@@ -155,7 +181,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(499, 163);
+            btnClose.Location = new Point(496, 163);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(115, 38);
             btnClose.TabIndex = 17;
@@ -175,6 +201,7 @@
             Controls.Add(btnDelete);
             Controls.Add(dataGridViewDrinksCategory);
             Name = "fCafeCategory";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CafeCategory";
             Load += fCafeCategory_Load;
             panel1.ResumeLayout(false);
@@ -191,14 +218,16 @@
         private Panel panel1;
         private Panel panel3;
         private Label label2;
-        private TextBox txtNameCa;
+        private TextBox txtName;
         private Panel panel2;
         private Label label1;
-        private TextBox txtIDCa;
+        private TextBox txtID;
         private Button btnUpdate;
         private Button btnAdd;
         private Button btnDelete;
         private DataGridView dataGridViewDrinksCategory;
         private Button btnClose;
+        private Button btnCancel;
+        private Button btnConfirm;
     }
 }

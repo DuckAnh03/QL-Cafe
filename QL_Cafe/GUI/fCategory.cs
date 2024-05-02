@@ -13,14 +13,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QL_Cafe.GUI
 {
-    public partial class fCafeCategory : Form
+    public partial class fCategory : Form
     {
         private readonly CategoryBUS _categoryBUS = new CategoryBUS();
 
         private List<Category> category = new();
 
         private int selectionId = 0;
-        public fCafeCategory()
+        public fCategory()
         {
             InitializeComponent();
         }

@@ -11,7 +11,7 @@ GO
 -- Hóa đơn
 -- Hóa đơn info
 
-CREATE TABLE Coffee_Table --Bàn
+CREATE TABLE CoffeeTable --Bàn
 (
 	ID INT IDENTITY PRIMARY KEY,
 	Name NVARCHAR(100) DEFAULT N'Chưa đặt tên',
@@ -28,7 +28,7 @@ CREATE TABLE Account --Tài khoản
 )
 GO
 
-CREATE TABLE DrinksCategory --Loại đồ uống
+CREATE TABLE Category --Loại đồ uống
 (
 	ID INT IDENTITY PRIMARY KEY,
 	Name NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',
@@ -39,43 +39,42 @@ CREATE TABLE Drinks --Đồ uống
 (
 	ID INT IDENTITY PRIMARY KEY,
 	Name NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',
-	ID_DrinksCategory INT NOT NULL,
+	IDCategory INT NOT NULL,
 	Price FLOAT NOT NULL
 
-	FOREIGN KEY (ID_DrinksCategory) REFERENCES DrinksCategory(ID)
+	FOREIGN KEY (IDCategory) REFERENCES Category(ID)
 )
 GO
 
 CREATE TABLE Bill --Hóa đơn
 (
 	ID INT IDENTITY PRIMARY KEY,
-	DateCheckIn DATE NOT NULL DEFAULT GETDATE(),
-	DateCheckOut DATE ,
-	ID_Table INT NOT NULL,
+	CheckIn DATE NOT NULL DEFAULT GETDATE(),
+	CheckOut DATE ,
+	IDTable INT NOT NULL,
 	Status INT NOT NULL --1: Đã thanh toán || 0: Chưa thanh toán
 	
-	FOREIGN KEY (ID_Table) REFERENCES Coffee_Table(ID)
+	FOREIGN KEY (IDTable) REFERENCES CoffeeTable(ID)
 )
 GO
 
 CREATE TABLE BillInfo
 (
 	ID INT IDENTITY PRIMARY KEY,
-	ID_Bill INT NOT NULL,
-	ID_Drinks INT NOT NULL,
+	IDBill INT NOT NULL,
+	IDDrinks INT NOT NULL,
 	Count INT NOT NULL DEFAULT 0
 
-	FOREIGN KEY (ID_Bill) REFERENCES Bill(ID),
-	FOREIGN KEY (ID_Drinks) REFERENCES Drinks(ID),
+	FOREIGN KEY (IDBill) REFERENCES Bill(ID),
+	FOREIGN KEY (IDDrinks) REFERENCES Drinks(ID),
 )
 GO
 
-INSERT INTO DrinksCategory VALUES (N'Mocha')
-INSERT INTO DrinksCategory VALUES (N'Latte')
+INSERT INTO Category VALUES (N'Mocha')
+INSERT INTO Category VALUES (N'Latte')
 GO
 
 INSERT INTO Drinks VALUES (N'Đen đá', 1, 10000)
 INSERT INTO Drinks VALUES (N'Cafe Latte', 2, 20000)
 GO
-
 

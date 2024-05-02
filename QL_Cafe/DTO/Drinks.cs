@@ -15,16 +15,16 @@ namespace QL_Cafe.DTO
         public int? ID { get; set; }
         public string? DrinksName { get;set; }
 
-        public int? ID_DrinksCategory { get; set; }
+        public int? IDCategory { get; set; }
 
         public double? Price { get; set; }
 
         public Drinks() { }
-        public Drinks(int? id, string drinksname, int id_drinkscategory, double price)
+        public Drinks(int? id, string drinksname, int idcategory, double price)
         {
             ID = id;
             DrinksName = drinksname;
-            ID_DrinksCategory = id_drinkscategory;
+            IDCategory = idcategory;
             Price = price;
         }
 
@@ -32,7 +32,7 @@ namespace QL_Cafe.DTO
         {
             ID = (int)Row["ID"];
             DrinksName = Row["Name"].ToString();
-            ID_DrinksCategory = (int)Row["ID_DrinksCategory"];
+            IDCategory = (int)Row["IDCategory"];
             Price = (double)Row["Price"];
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace QL_Cafe.GUI
 {
-    partial class fCafeCategory
+    partial class fCategory
     {
         /// <summary>
         /// Required designer variable.

@@ -117,7 +117,7 @@ namespace QL_Cafe.GUI
             Drinks newcafe = new Drinks()
             {
                 DrinksName = txtName.Text,
-                ID_DrinksCategory = comboboxDatas[cbb_CafeCategory.SelectedIndex].Key,
+                IDCategory = comboboxDatas[cbb_CafeCategory.SelectedIndex].Key,
                 Price = double.Parse(txtPrice.Text),
             };
             if (_drinksBUS.Add(newcafe))

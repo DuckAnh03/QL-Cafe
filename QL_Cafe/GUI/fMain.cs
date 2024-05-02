@@ -27,7 +27,7 @@ namespace QL_Cafe.GUI
         private void MenuStripCafeCategoryList_Click(object sender, EventArgs e)
         {
             this.Hide();
-            fCafeCategory fCafeCategoryList = new fCafeCategory();
+            fCategory fCafeCategoryList = new fCategory();
             fCafeCategoryList.Show();
         }
 

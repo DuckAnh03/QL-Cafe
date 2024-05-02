@@ -42,7 +42,7 @@ namespace QL_Cafe.BUS
 
         public bool Add(Drinks drinks)
         {
-            if (drinks == null || drinks.ID_DrinksCategory <= 0)
+            if (drinks == null || drinks.IDCategory <= 0)
             {
                 return false;
             }
@@ -55,11 +55,7 @@ namespace QL_Cafe.BUS
             return _drinksDAL.DeleteDrinks(id);
         }
 
-        /// <summary>
-        /// Updates the specified student.
-        /// </summary>
-        /// <param name="student">The student.</param>
-        /// <returns></returns>
+
         public bool Update(Drinks drinks)
         {
             if (drinks == null || drinks.ID <= 0)

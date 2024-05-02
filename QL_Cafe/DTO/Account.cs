@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace QL_Cafe.DTO
 {
     internal class Account
-    {
+    {//aaaaaaa
     }
 }

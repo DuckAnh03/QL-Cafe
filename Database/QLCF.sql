@@ -104,10 +104,7 @@ INSERT INTO BillInfo (IDBill, IDDrinks, Count) VALUES
 	(2, 3, 3),
 	(3, 5, 4),
 	(3, 1, 1)
-GO
 
--- Đặt lại giá trị của bảng [YourTableName] về 1
-DBCC CHECKIDENT ('Bill', RESEED, 1);
 GO
 
 CREATE PROCEDURE USP_INSERTBILLINFO 

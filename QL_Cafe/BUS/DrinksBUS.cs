@@ -40,6 +40,15 @@ namespace QL_Cafe.BUS
             return result;
         }
 
+        public List<Drinks> GetDrinksByID(int id)
+        {
+            var result = new List<Drinks>();
+            var data = _drinksDAL.GetDrinksByID((int)id);
+            result.Add(new((DataRow)data.Rows[0]));
+            return result;
+
+        }
+
         public bool Add(Drinks drinks)
         {
             if (drinks == null || drinks.IDCategory <= 0)

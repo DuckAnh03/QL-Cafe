@@ -29,7 +29,7 @@ namespace QL_Cafe.DTO
         {
             ID = (int?)row["ID"];
             CheckIn = (DateTime?)row["CheckIn"];
-            CheckOut = (DateTime?)row["CheckOut"];
+            CheckOut = null;
             IDTable = (int?)row["IDTable"];
             Status = (int?)row["Status"];
         }

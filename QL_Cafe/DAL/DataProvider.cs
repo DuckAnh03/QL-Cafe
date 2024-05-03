@@ -14,7 +14,7 @@ namespace QL_Cafe.DAL
 
         private DataProvider(){}
 
-        private static DataProvider instance; // Ctrl + R + E
+        private static DataProvider instance; 
 
         public static DataProvider Instance
         {

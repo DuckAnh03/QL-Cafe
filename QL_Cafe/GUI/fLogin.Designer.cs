@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnLogin = new Button();
             panel1 = new Panel();
             btnExit = new Button();
             btnlogin = new Button();
@@ -42,12 +43,23 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.DodgerBlue;
+            btnLogin.Location = new Point(93, 200);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(172, 43);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Đăng nhập";
+            btnLogin.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             panel1.Controls.Add(btnExit);
             panel1.Controls.Add(btnlogin);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(btnLogin);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(374, 142);
@@ -154,6 +166,8 @@
         }
 
         #endregion
+
+        private Button btnLogin;
         private Panel panel1;
         private Panel panel3;
         private Label label2;

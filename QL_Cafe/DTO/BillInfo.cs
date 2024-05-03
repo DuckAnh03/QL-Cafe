@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_Cafe.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace QL_Cafe.DTO
 
         public BillInfo() { }
 
-        public BillInfo(int? iD, int? iDBill, int? iDDrinks, int? count)
+        public BillInfo( int? iDBill, int? iDDrinks, int? count)
         {
-            ID = iD;
+
             IDBill = iDBill;
             IDDrinks = iDDrinks;
             Count = count;
@@ -30,5 +31,6 @@ namespace QL_Cafe.DTO
             IDDrinks = (int)row["IDDrinks"];
             Count = (int)row["Count"];
         }
+        
     }
 }

@@ -27,13 +27,11 @@ namespace QL_Cafe.DAL
             }
             return DataProvider.Instance.ExecuteQuery(query);
         }
-        public DataTable GetDrinksById_DrinksCategory(int categoryId)
+
+        public DataTable GetDrinksByID(int id)
         {
-            var query = "SELECT * FROM [Drinks] ";
-            if (categoryId > 0)
-            {
-                query += $"WHERE IDCategory ={categoryId}";
-            }
+            var query = $"SELECT * FROM [Drinks] WHERE ID ={id}";
+            
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

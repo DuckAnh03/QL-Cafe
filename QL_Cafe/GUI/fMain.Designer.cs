@@ -123,7 +123,6 @@
             thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
             thôngTinToolStripMenuItem.Size = new Size(160, 26);
             thôngTinToolStripMenuItem.Text = "Thông tin ";
-            thôngTinToolStripMenuItem.Click += thôngTinToolStripMenuItem_Click;
             // 
             // MSLogout
             // 
